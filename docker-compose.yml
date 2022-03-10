@@ -1,0 +1,36 @@
+version: "3.0"
+
+services:
+  rasa:
+    image: rasa/rasa:latest-full
+    user: "root"
+    networks: ["rasa-network"]
+    ports:
+      - "5005:5005"
+    volumes:
+      - "./app/:/app/"
+    command: >
+      run 
+      --endpoints endpoints.yml
+
+  action_server:
+    image: rasa/rasa-sdk:latest
+    networks: ["rasa-network"]
+    ports:
+      - "5055:5055"
+    volumes:
+      - "./app/actions:/app/actions"
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user #
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: rasa
+
+  redis:
+    image: redis:latest
+    environment:
+      REDIS_PASSWORD: redis123
+
+networks: { rasa-network: {} }
