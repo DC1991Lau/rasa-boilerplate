@@ -15,6 +15,7 @@ services:
       -m models
       --enable-api
       --cors "*"
+      --debug
 
   action_server:
     image: rasa/rasa-sdk:latest
@@ -30,11 +31,22 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DATABASE: rasa
-    volumes:
-      - ./data/postgres:/var/lib/postgresql/data
 
   redis:
     image: redis:latest
     networks: ["rasa-network"]
+
+  nlg:
+    entrypoint: ["python"]
+    image: nlg_server
+    networks: ["rasa-network"]
+    user: "root"
+    build:
+      context: ./app/nlg
+    volumes:
+      - ./app/data:/nlg/data
+    ports:
+      - "5056:5056"
+    command: nlg_server.py --port 5056 --domain ./data/domain.yml
 
 networks: { rasa-network: {} }

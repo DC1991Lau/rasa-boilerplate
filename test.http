@@ -3,5 +3,42 @@ content-type: application/json
 
 {
 	"sender": "user12",
-	"message": "hello"
+	"message": "who are you?"
 }
+
+GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/conversations/user12/tracker
+
+GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/conversations/user12/story
+
+GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/domain
+
+
+
+POST http://5056-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/nlg
+content-type: application/json
+
+{
+  "response":"utter_happy",
+  "arguments":{
+    
+  },
+  "tracker":{
+    "sender_id":"user_0",
+    "slots":{},
+    "latest_message":{},
+    "latest_event_time":1599476297.694504,
+    "followup_action":null,
+    "paused":false,
+    "events":[],
+    "latest_input_channel":"rest",
+    "active_loop":{},
+    "latest_action_name":"action_listen"
+  },
+  "channel":{
+    "name":"collector"
+  }
+}
+
+
+
+
