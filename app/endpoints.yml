@@ -1,0 +1,14 @@
+tracker_store:
+  type: SQL
+  dialect: "postgresql"
+  url: "localhost"
+  db: "rasa"
+  username: postgres
+  password: postgres
+
+lock_store:
+  type: "redis"
+  url: "redis"
+  port: 6379
+  password:
+  db: 0

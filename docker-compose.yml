@@ -12,6 +12,9 @@ services:
     command: >
       run 
       --endpoints endpoints.yml
+      -m models
+      --enable-api
+      --cors "*"
 
   action_server:
     image: rasa/rasa-sdk:latest
@@ -23,14 +26,15 @@ services:
 
   postgres:
     image: postgres:latest
+    networks: ["rasa-network"]
     environment:
-      POSTGRES_USER: user #
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: rasa
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: rasa
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
 
   redis:
     image: redis:latest
-    environment:
-      REDIS_PASSWORD: redis123
+    networks: ["rasa-network"]
 
 networks: { rasa-network: {} }

@@ -1,0 +1,7 @@
+POST   https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/webhooks/rest/webhook
+content-type: application/json
+
+{
+	"sender": "user12",
+	"message": "hello"
+}
