@@ -58,13 +58,14 @@ async def generate_response(nlg_call, domain):
     )
 
 
-def run_server(domain, port, workers):
+def run_server(port, workers):
     app = Sanic("nlg_server")
 
     @app.route("/nlg", methods=["POST", "OPTIONS"])
     async def nlg(request):
         """Endpoint which processes the Core request for a bot response."""
         nlg_call = request.json
+        domain = Domain.load(cmdline_args.domain)
         bot_response = await generate_response(nlg_call, domain)
 
         return response.json(bot_response)
@@ -83,6 +84,6 @@ if __name__ == "__main__":
     # Running as standalone python application
     arg_parser = create_argument_parser()
     cmdline_args = arg_parser.parse_args()
-    _domain = Domain.load(cmdline_args.domain)
+    
 
-    run_server(_domain, cmdline_args.port, cmdline_args.workers)
+    run_server(cmdline_args.port, cmdline_args.workers)
