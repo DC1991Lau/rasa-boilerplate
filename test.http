@@ -2,13 +2,13 @@ POST   https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/webho
 content-type: application/json
 
 {
-	"sender": "user12",
-	"message": "who are you?"
+	"sender": "user188",
+	"message": "hello"
 }
 
 GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/conversations/user12/tracker
 
-GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/conversations/user12/story
+GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/conversations/user188/story
 
 GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/domain
 

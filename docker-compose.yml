@@ -18,7 +18,7 @@ services:
       --debug
 
   action_server:
-    image: rasa/rasa-sdk:latest
+    image: rasa/rasa-sdk:latest #talvez criar imagem do servidor de actions ao invés disso
     networks: ["rasa-network"]
     ports:
       - "5055:5055"
@@ -48,5 +48,13 @@ services:
     ports:
       - "5056:5056"
     command: nlg_server.py --port 5056 --domain ./data/domain.yml
+
+  #model_server
+
+  #logging
+
+  #factoresbot_api
+
+  #nginx
 
 networks: { rasa-network: {} }
