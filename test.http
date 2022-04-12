@@ -1,5 +1,5 @@
 # POST message
-POST   https://8080-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/rasa/webhooks/rest/webhook
+POST   https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/webhooks/rest/webhook
 content-type: application/json
 
 {
@@ -8,17 +8,17 @@ content-type: application/json
 }
 
 # GET conversation from sender_id 
-GET https://8080-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/rasa/conversations/user1/tracker
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/conversations/user1/tracker
 
 # GET story from conversation
-GET https://8080-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/rasa/conversations/user188/story
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/conversations/user188/story
 
 # GET domain
-GET https://8080-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/rasa/domain
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/domain
 
 # API
 
-GET https://8080-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/api/
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/
 
 # GET NLU logs
 

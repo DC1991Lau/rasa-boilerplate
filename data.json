@@ -1,0 +1,37 @@
+{
+  "event": "user",
+  "timestamp": 1649780906.471302,
+  "metadata": { "model_id": "41ff7787900644ac8573a369540b27d1" },
+  "text": "hello",
+  "parse_data": {
+    "intent": { "name": "greet", "confidence": 0.9999985694885254 },
+    "entities": [],
+    "text": "hello",
+    "message_id": "f96a25a425614a5c8de619fba43a48bc",
+    "metadata": {},
+    "text_tokens": [[0, 5]],
+    "intent_ranking": [
+      { "name": "greet", "confidence": 0.9999985694885254 },
+      { "name": "deny", "confidence": 7.465182534360792e-7 },
+      { "name": "goodbye", "confidence": 3.240129160531069e-7 },
+      { "name": "bot_challenge", "confidence": 1.8240942267766513e-7 },
+      { "name": "mood_unhappy", "confidence": 1.419943629343834e-7 },
+      { "name": "mood_great", "confidence": 3.712759522045417e-8 },
+      { "name": "affirm", "confidence": 3.1898785834982846e-8 }
+    ],
+    "response_selector": {
+      "all_retrieval_intents": [],
+      "default": {
+        "response": {
+          "responses": null,
+          "confidence": 0.0,
+          "intent_response_key": null,
+          "utter_action": "utter_None"
+        },
+        "ranking": []
+      }
+    }
+  },
+  "input_channel": "rest",
+  "message_id": "f96a25a425614a5c8de619fba43a48bc"
+}

@@ -28,6 +28,16 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DATABASE: rasa
 
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    networks: ["rasa-network"]
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    ports:
+      - "5050:80"
+
   redis:
     image: redis:latest
     networks: ["rasa-network"]
@@ -51,22 +61,15 @@ services:
 
   nginx:
     networks: ["rasa-network"]
-    restart: on-failure
     build: ./app/nginx
-    volumes:
-      - ./app/nginx:/nginx
     ports:
       - "8080:8080"
     depends_on:
       - rasa
       - api
 
-  #factoresbot_api
-
   #model_server
 
   #logging
-
-  #nginx
 
 networks: { rasa-network: {} }
