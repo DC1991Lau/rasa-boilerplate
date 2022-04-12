@@ -1,20 +1,55 @@
-POST   https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/webhooks/rest/webhook
+# POST message
+POST   https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/webhooks/rest/webhook
 content-type: application/json
 
 {
-	"sender": "user188",
+	"sender": "user1",
 	"message": "hello"
 }
 
-GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/conversations/user12/tracker
+# GET conversation from sender_id 
+GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/conversations/user1/tracker
 
-GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/conversations/user188/story
+# GET story from conversation
+GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/conversations/user188/story
 
-GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/domain
+# GET domain
+GET https://5005-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/domain
+
+# GET NLU logs
+
+  # returns an array of objects (user inputs) - conversation_id / model / time / {user_input - entities / intent - {name / confidence} / intent_ranking / text }
+
+# {
+# "conversation_id": "08b44d93-931e-4305-9054-d9c8f5fb844a",
+# "event_id": 17476,
+# "hash": "c47d1fc216d93242ee040374359fa22e",
+# "id": 859,
+# "model": "20220310-124135",
+# "tags": [],
+# "time": 1649753144.74728,
+# "user_input": {
+#   "entities": [],
+#   "intent": {"name": "faq/alterar_pagamento_mes", "confidence": 0.9999997616},
+#   "intent_ranking": [{"id": 8305115858588959000, "name": "faq/alterar_pagamento_mes", "confidence": 0.9999997616}],
+#   "text": "Quantos dias uteis tenho que pagar a mensalidade?"}
+# }
+
+
+# GET intents
+
+  # returns array of objects - intent
+
+  # [{"intent": "deny"}, {"intent": "faq/consultar_data_prox_prestacao"}]
+
+# POST training files
 
 
 
-POST http://5056-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu38.gitpod.io/nlg
+
+
+
+POST http://5056-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/nlg
 content-type: application/json
 
 {
