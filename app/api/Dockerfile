@@ -1,43 +1,13 @@
-FROM python:3.9-slim AS builder
+FROM python:3.9
 
-RUN apt-get update && apt-get install -y gcc && apt-get install -y --no-install-recommends \
-   libpq-dev \
-   curl \
-   uuid \
-   poppler-utils \
-   && rm -rf /var/lib/apt/lists/*
+WORKDIR /api
 
-ENV TZ=Europe/Lisbon
-ENV VIRTUAL_ENV=/opt/venv
+COPY ./requirements.txt /api/requirements.txt
 
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN pip install --no-cache-dir --upgrade -r /api/requirements.txt
 
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+COPY . /api
 
-ADD requirements.txt requirements.txt
+EXPOSE 8000
 
-RUN /opt/venv/bin/python -m  pip install --upgrade pip && \
-    /opt/venv/bin/python -m  pip install --no-cache-dir -r requirements.txt && \
-    find /opt/venv \
-        \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
-        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
-        -exec rm -rf '{}' \;
-
-
-FROM python:3.9-slim AS nlpapi
-COPY --from=builder /opt/venv /opt/venv
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-   libtesseract-dev \
-   libleptonica-dev \
-   tesseract-ocr \
-   tesseract-ocr-por \
-   poppler-utils \
- && rm -rf /var/lib/apt/lists/*
-
-ENV PATH="/opt/venv/bin:$PATH"
-
-ADD ./app /usr/app
-
-CMD ["bash", "-c", "python3 /usr/app/main.py"]
+CMD ["python", "main.py"]

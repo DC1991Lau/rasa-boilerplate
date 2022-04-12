@@ -1,2 +1,5 @@
 venv
-app/rasa/models/**
+**/models
+__init__.py
+__pycache__
+/data/postgres
