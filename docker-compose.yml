@@ -64,6 +64,7 @@ services:
     restart: always
     volumes:
       - ./app/api:/api
+      - ./app/data:/api/data
     depends_on:
       - postgres
       - rasa

@@ -1,12 +1,14 @@
 import uvicorn
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, File, UploadFile, HTTPException, Body, Request
 from sqlalchemy.orm import Session
+import urllib.request as urllib2 
 
 import crud
 import models
 import schemas
+import json
 
-from utils import get_intents
+from utils import get_intents, update_nlg, create_nlg
 
 from database import SessionLocal, engine
 
@@ -28,9 +30,29 @@ def read_users(db: Session = Depends(get_db)):
     return logs
 
 @app.get("/intents/")
-def read_users():
+def read_intents():
     intents = get_intents()
     return intents
+
+# @app.post("/update")
+# def update_utters( utters: str = Body(..., embed=True)):
+#     var = urllib2.unquote(utters)
+#     intents = write_yml(var['utter_name'],var['utter'])
+#     return
+
+@app.post("/nlg/update")
+async def update_utters(request: Request):
+    var = urllib2.unquote(await request.body())
+    json_data = json.loads(var)
+    intents = update_nlg(json_data['utter_name'],json_data['utter'])
+    return intents 
+
+@app.post("/nlg/create")
+async def update_utters(request: Request):
+    var = urllib2.unquote(await request.body())
+    json_data = json.loads(var)
+    intents = create_nlg(json_data['utter_name'],json_data['utter'])
+    return intents 
 
 
 if __name__ == "__main__":

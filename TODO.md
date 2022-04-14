@@ -6,6 +6,6 @@
         [] entities (GET)
         [] add to train data (POST)
     [] NLG
-        [] Create new response
-        [] Update response
+        [x] Create new response
+        [x] Update response
         [] Delete response
