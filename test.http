@@ -1,5 +1,9 @@
+# API
+
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/
+
 # POST message
-POST   https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/webhooks/rest/webhook
+POST   https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/webhooks/rest/webhook
 content-type: application/json
 
 {
@@ -8,19 +12,24 @@ content-type: application/json
 }
 
 # GET conversation from sender_id 
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/conversations/user1/tracker
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/conversations/user1/tracker
 
 # GET story from conversation
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/conversations/user188/story
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/conversations/user1/story
 
 # GET domain
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/rasa/domain
-
-# API
-
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/domain
 
 # GET NLU logs
+
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/logs/
+
+# GET Intents
+
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/intents/
+
+
+
 
   # returns an array of objects (user inputs) - conversation_id / model / time / {user_input - entities / intent - {name / confidence} / intent_ranking / text }
 
@@ -51,32 +60,13 @@ GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/
 
 
 
+# POST new response
 
-
-POST http://5056-dc1991lau-rasaboilerplat-avln0e8yl5w.ws-eu39a.gitpod.io/nlg
+POST https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/nlg
 content-type: application/json
 
-{
-  "response":"utter_happy",
-  "arguments":{
-    
-  },
-  "tracker":{
-    "sender_id":"user_0",
-    "slots":{},
-    "latest_message":{},
-    "latest_event_time":1599476297.694504,
-    "followup_action":null,
-    "paused":false,
-    "events":[],
-    "latest_input_channel":"rest",
-    "active_loop":{},
-    "latest_action_name":"action_listen"
-  },
-  "channel":{
-    "name":"collector"
-  }
-}
+#UPDATE response
+
 
 
 

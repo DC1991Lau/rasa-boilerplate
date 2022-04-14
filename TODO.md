@@ -2,6 +2,10 @@
 
     [] NLU inbox
         [] logs (GET)
-        [] intents (GET)
+        [x] intents (GET)
         [] entities (GET)
-        [] add to train data (GET)
+        [] add to train data (POST)
+    [] NLG
+        [] Create new response
+        [] Update response
+        [] Delete response

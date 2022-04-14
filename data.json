@@ -1,37 +1,27 @@
 {
-  "event": "user",
-  "timestamp": 1649780906.471302,
-  "metadata": { "model_id": "41ff7787900644ac8573a369540b27d1" },
-  "text": "hello",
-  "parse_data": {
-    "intent": { "name": "greet", "confidence": 0.9999985694885254 },
-    "entities": [],
-    "text": "hello",
-    "message_id": "f96a25a425614a5c8de619fba43a48bc",
-    "metadata": {},
-    "text_tokens": [[0, 5]],
+  "id": 883,
+  "time": 1649917331.6472299099,
+  "model": "20220310-124135",
+  "hash": "0a555b51352a4abcc0c0563324c6be40",
+  "conversation_id": "2336d2db-bd17-400e-b09f-e01e6fa0e805",
+  "event_id": 18099,
+  "user_input": {
+    "text": "Nao consigo pagar as prestacoes porque fiquei sem trabalho",
+    "intent": {
+      "name": "faq/alterar_pagamento_mes",
+      "confidence": 0.9999996424
+    },
     "intent_ranking": [
-      { "name": "greet", "confidence": 0.9999985694885254 },
-      { "name": "deny", "confidence": 7.465182534360792e-7 },
-      { "name": "goodbye", "confidence": 3.240129160531069e-7 },
-      { "name": "bot_challenge", "confidence": 1.8240942267766513e-7 },
-      { "name": "mood_unhappy", "confidence": 1.419943629343834e-7 },
-      { "name": "mood_great", "confidence": 3.712759522045417e-8 },
-      { "name": "affirm", "confidence": 3.1898785834982846e-8 }
-    ],
-    "response_selector": {
-      "all_retrieval_intents": [],
-      "default": {
-        "response": {
-          "responses": null,
-          "confidence": 0.0,
-          "intent_response_key": null,
-          "utter_action": "utter_None"
-        },
-        "ranking": []
+      {
+        "id": 8305115858588958824,
+        "name": "faq/alterar_pagamento_mes",
+        "confidence": 0.9999996424
+      },
+      {
+        "id": -7185695768740051994,
+        "name": "affirm",
+        "confidence": 0.0000002239
       }
-    }
-  },
-  "input_channel": "rest",
-  "message_id": "f96a25a425614a5c8de619fba43a48bc"
+    ]
+  }
 }
