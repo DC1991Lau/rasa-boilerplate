@@ -49,6 +49,3 @@ response = {
     "carry_over_slots_to_new_session": True
   }
 }
-
-
-print(object(response['intents']))

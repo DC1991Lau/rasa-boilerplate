@@ -1,11 +1,12 @@
 [] API
 
     [] NLU inbox
-        [] logs (GET)
+        [x] logs (GET)
         [x] intents (GET)
-        [] entities (GET)
+        [x] entities (GET)
         [] add to train data (POST)
     [] NLG
         [x] Create new response
         [x] Update response
         [] Delete response
+        [x] Get all responses

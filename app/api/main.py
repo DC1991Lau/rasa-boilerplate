@@ -8,7 +8,7 @@ import models
 import schemas
 import json
 
-from utils import get_intents, update_nlg, create_nlg
+from utils import get_intents, update_nlg, create_nlg, get_nlg
 
 from database import SessionLocal, engine
 
@@ -52,6 +52,11 @@ async def update_utters(request: Request):
     var = urllib2.unquote(await request.body())
     json_data = json.loads(var)
     intents = create_nlg(json_data['utter_name'],json_data['utter'])
+    return intents 
+
+@app.get("/nlg/getresponses")
+async def get_responses():
+    intents = get_nlg()
     return intents 
 
 

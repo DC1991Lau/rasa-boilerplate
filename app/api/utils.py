@@ -68,3 +68,15 @@ def create_nlg(utter_name, utter):
         documents = yaml.dump(documents, file)
     
     return {"message" : "Resposta criada"}
+
+def get_nlg():
+
+    path = os.getcwd()
+    print(path)
+    data_path = path + '/data/domain.yml'
+
+    with open(data_path) as file:
+        documents = yaml.full_load(file)
+        responses = documents['responses']
+    
+    return responses

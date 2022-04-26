@@ -1,9 +1,9 @@
 # API
 
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/
 
 # POST message
-POST   https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/webhooks/rest/webhook
+POST   https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/webhooks/rest/webhook
 content-type: application/json
 
 {
@@ -12,21 +12,21 @@ content-type: application/json
 }
 
 # GET conversation from sender_id 
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/conversations/user1/tracker
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/conversations/user1/tracker
 
 # GET story from conversation
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/conversations/user1/story
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/conversations/user1/story
 
 # GET domain
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/domain
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/domain
 
 # GET NLU logs
 
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/logs/
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/logs/
 
 # GET Intents
 
-GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/intents/
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/intents/
 
 
 
@@ -59,21 +59,23 @@ GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/int
 
 # POST new response
 
-POST https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/nlg/update
+POST https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/nlg/update
 content-type: application/json
 
 {
 	"utter_name": "utter_greet",
-	"utter": "Hey youaau"
+	"utter": "Hey Diogo"
 }
 
-POST https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu39b.gitpod.io/api/nlg/create
+POST https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/nlg/create
 content-type: application/json
 
 {
 	"utter_name": "utter_greetaaa",
-	"utter": "Hey yoaaauu"
+	"utter": "Hey Diogo"
 }
+
+GET https://8080-dc1991lau-rasaboilerplat-6jz8pn34ilx.ws-eu42.gitpod.io/api/nlg/getresponses
 
 #UPDATE response
 
