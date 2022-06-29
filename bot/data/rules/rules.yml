@@ -1,0 +1,32 @@
+version: "2.0"
+
+rules:
+  - rule: pedido de handoff
+    steps:
+      - intent: handoff
+      - action: action_handoff
+
+  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+    steps:
+      - intent: nlu_fallback
+      - action: utter_another_keyword
+
+  - rule: inicio sessao
+    steps:
+      - intent: session_start
+      - action: action_session_start
+
+  - rule: greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: chitchat
+    steps:
+      - intent: chitchat
+      - action: utter_chitchat

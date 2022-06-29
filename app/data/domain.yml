@@ -15,7 +15,7 @@ responses:
   utter_goodbye:
   - text: Bye
   utter_greet:
-  - text: Hey Diogo
+  - text: Hey Men
   utter_greetaa:
   - text: Hey youu
   utter_greetaaa:
@@ -24,6 +24,8 @@ responses:
   - text: Great, carry on!
   utter_iamabot:
   - text: I am a bot, powered by Rasaaaaaaasaas.
+  utter_okclient:
+  - text: Hey Diogo
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60

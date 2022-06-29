@@ -1,0 +1,287 @@
+version: "2.0"
+
+responses:
+  utter_faq/dadospessoais:
+    - text: "Na página Perfil, tem a oportunidade de consultar os seus dados pessoais, como o nome, telemóvel e email. Estes dados foram facultados quando realizou a primeira operação Cofidis Pay."
+
+  utter_faq/dadospagamento:
+    - text: "Os dados de pagamento estão na página Perfil ou na página Operações. Pode sempre visualizar o meio de pagamento para cada operação Cofidis Pay, acionar notificações, e até alterar o cartão bancário ou IBAN que pretende utilizar para os seus pagamentos."
+
+  utter_faq/pessoais:
+    - text: "Pode consultar os seus dados pessoais na página de Perfil. Pode visualizar os dados (nome, telemóvel e email) que facultou no momento em que realizou a operação CofidisPay."
+
+  utter_faq/alterar_dadospessoais:
+    - text: "Infelizmente, alterar dados pessoais como o nome, número de telemóvel ou email ainda não é possível através da sua aplicação Cofidis Pay. Porém, pode recorrer à nossa equipa de suporte para realizar o seu pedido. Contacte o Apoio a Cliente Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+
+  utter_faq/definir_foto:
+    - text: "Na página Perfil, clique no ícone de máquina fotográfica (junto à janela da fotografia) e tire uma selfie ou carregue a sua melhor fotografia, acedendo à galeria do seu telemóvel."
+
+  utter_faq/alterar_foto:
+    - text: "Se não está satisfeito com a sua fotografia, basta alterá-la através do ícone de máquina fotográfica na página Perfil (junto à janela de fotografia). Use a câmara ou a galeria do seu telemóvel. Para nós, estará sempre bem."
+
+  utter_faq/consulta_cartao_ativo:
+    - text: "Consultar o cartão bancário é simples! Vá até à página Operações e tenha sempre acesso aos dados do cartão bancário que tem ativo e associado a cada operação Cofidis Pay."
+
+  utter_faq/alterar_cartao_ativo:
+    - text: "Possui a opção 'Alterar Método de Pagamento' na página Operações. Tenha o cartão à mão, pois ser-lhe-á solicitada a inserção dos dados do novo cartão, caso pretenda avançar com a alteração."
+
+  utter_faq/associar_cartao:
+    - text: "Na página de Operações, pode alterar o cartão bancário que tenha ativo através da opção 'Alterar método de pagamento', presente junto aos dados de pagamento associados a cada operação CofidisPay. Ao selecionar a opção de alterar para outro cartão bancário, ser-lhe-á solicitado que fotografe ou insira os dados do novo cartão que pretende associar."
+
+  utter_faq/cartoes_permitidos:
+    - text: "Pode usar todo o tipo de cartão de débito ou crédito, emitido em Portugal por uma instituição autorizada para o efeito. Chamo a atenção que o cartão deve ter o 3DS ativo, garantindo uma maior segurança na realização dos seus pagamentos online (consiste no envio de uma mensagem SMS por parte da instituição emissora para o telemóvel do titular do cartão, com um código de autorização OTP). Não aceitamos cartões pré-pagos."
+
+  utter_faq/cartao_invalido:
+    - text: "Às vezes, poderá encontrar um erro de cartão bancário inválido durante o processo de alteração do mesmo. Confirme se os dados inseridos estão totalmente corretos ou tente um novo cartão. Se o erro permanecer, pode ainda escolher a opção de débito direto (inserindo o respetivo IBAN). A invalidade dos cartões muitas vezes está associada à não ativação do 3DS, uma característica que garante maior segurança nos seus pagamentos online. Tente obter mais informação junto à instituição emissora do seu cartão sobre o 3DS."
+
+  utter_faq/cartao_caducar_oquefazer:
+    - text: "Se o cartão bancário que utiliza estiver prestes caducar, pode sempre alterá-lo na página Operações com a opção 'Alterar Métodos de Pagamento'. Aproveite e acione as notificações para ser informado desta situação atempadamente."
+
+  utter_faq/cartao_caducar_comosaber:
+    - text: "Não precisa de saber de cor quando o seu cartão bancário está a caducar. Basta consultar a página Operações ou ativar as notificações para poder ser relembrado desta situação."
+
+  utter_faq/consultar_iban:
+    - text: "Os dados de IBAN para pagamento através de débito direto (caso esteja ativo) podem ser vistos na página Operações."
+
+  utter_faq/alterar_iban:
+    - text: "Possui, na sua página Operações, a opção 'Alterar método de pagamento' junto de cada operação Cofidis Pay. Se deseja alterar o IBAN, tenha logo à sua disposição os dados de um novo, pois ser-lhe-ão solicitados. Depois, é muito fácil submeter um comprovativo. Basta usar a funcionalidade de captura e fotografar o mesmo. Conclua o processo mediante a inserção da OTP (one time password) que receberá por SMS para validar o novo IBAN."
+
+  utter_faq/pagamentos_pontuais:
+    - text: "Pode realizar um pagamento pontual de um valor em atraso ou até mesmo antecipar o pagamento de prestações futuras. Basta consultar as Referências de Multibanco que estão sempre disponíveis na página Operações."
+
+  utter_faq/pagamentos_pontuaisserve:
+    - text: "O pagamento de um determinado montante fora das datas de pagamento das prestações é considerado um pagamento pontual e serve para regularizar um valor que possa ter em atraso ou pagar antecipadamente um valor que irá abater às suas prestações futuras. Na página Operações, junto aos dados de pagamento, tem sempre uma Referência Multibanco disponível para este fim."
+
+  utter_faq/consultar_movimentos:
+    - text: "Na página Movimentos, tem uma listagem de todos os movimentos associados a cada operação Cofidis Pay, com indicação da data e valor correspondente."
+
+  utter_faq/consultar_historico_prestacao:
+    - text: "Na página Movimentos, pode visualizar uma representação gráfica de todas as prestações associadas a cada operação Cofidis Pay referentes a meses passados, com indicação do valor de cada prestação e o respetivo estado (paga, não paga)."
+
+  utter_faq/consultar_prestacao_futura:
+    - text: "Na página Movimentos, pode visualizar uma representação gráfica de todas as prestações associadas a cada operação Cofidis Pay referentes a meses futuros (previstas), com indicação do valor de cada prestação vindoura."
+
+  utter_faq/filtrar_movimentos:
+    - text: "Na página Movimentos, pode recorrer a filtros para selecionar que movimentos pretende visualizar, por exemplo, selecionar um tipo de movimento específico ou um determinado intervalo de datas."
+
+  utter_faq/operacao_cofidispay:
+    - text: "A Cofidis Pay é uma solução de pagamento disponível num determinado conjunto de comerciantes de bens, produtos ou serviços, que permite facilitar ao cliente o pagamento de compras no canal físico e online, fracionando o pagamento das mesmas. Pode consultar todos os parceiros Cofidis Pay na página Parceiros. A solução Cofidis Pay é gratuita. Ao subscrevê-la, não pagará juros nem quaisquer outros encargos (incluindo impostos ou comissões), salvo em situações de incumprimento no pagamento das prestações no prazo acordado."
+
+  utter_faq/prazo_operacao_cofidispay:
+    - text: "Tem duas opções para recordar o prazo das suas operações Cofidis Pay. Pode consultar a página Movimentos, onde encontra uma previsão do primeiro e último mês de pagamento; ou ir até à página Operações, onde pode visualizar a informação sobre o número de prestações acordadas para cada operação Cofidis Pay."
+
+  utter_faq/consultar_nome_operacao_cofidispay:
+    - text: "Nas páginas Movimentos ou Operações, pode consultar o nome de cada operação. Encontrará logo informação sobre o comerciante onde realizou a compra do bem ou serviço com a Cofidis Pay."
+
+  utter_faq/alterar_nome_operacao_cofidispay:
+    - text: "Personalize o nome das suas operações na página Operações, junto ao quadro de resumo. O nome que definir será automaticamente atualizado em toda a aplicação."
+
+  utter_faq/consultar_numero_prestacao:
+    - text: "Pode consultar o número de prestações acordadas tanto na página Operações como na página Movimentos. Ambas as páginas apresentam um quadro de resumo das prestações. Na secção 'As minhas Prestações' tem ainda uma representação gráfica de todas as prestações (passadas e futuras) associadas a cada operação (com indicação do valor de cada prestação)."
+
+  utter_faq/pagamento_prestacao:
+    - text: "O pagamento é feito mensalmente, de forma automática, mediante o meio de pagamento escolhido por si no momento da compra e adesão à Cofidis Pay: débito no cartão bancário ou débito direto através de IBAN. Tem ainda a possibilidade de alterar o método de pagamento. Para tal, basta consultar a página Operações e junto de cada operação tem a opção 'Alterar método de pagamento'"
+
+  utter_faq/alterar_pagamento_mes:
+    - text: "Deve ter sempre em consideração o dia do mês no qual inicia o pedido. Se fizer o processo de alteração no final do mês, a Cofidis Pay já iniciou o processo de cobrança da próxima prestação, surgindo uma mensagem de alerta 'Não é possível proceder à alteração do seu meio de pagamento no período atual'. Assim, terá que aguardar até ao início do mês seguinte"
+
+  utter_faq/consultar_montante_total:
+    - text: "Na página Movimentos ou na página Operações, pode consultar informação sobre o valor total da operação, que consta também na fatura referente à compra do bem ou serviço com a Cofidis Pay."
+
+  utter_faq/alterar_plano_pagamento:
+    - text: "Não é possível alterar o plano inicialmente acordado para pagamento das prestações das operações Cofidis Pay. No entanto, é possível efetuar uma ou mais amortizações sem custos adicionais, através de Pagamentos Pontuais. Na página Operações, junto aos dados de pagamento, tem sempre uma Referência Multibanco disponível para este fim."
+
+  utter_faq/consulta_num_dossier:
+    - text: "Pode consultar o número do dossier associado a cada operação Cofidis Pay na página Movimentos ou na página Operações, junto ao quadro de resumo."
+
+  utter_faq/consultar_doc_cedencia_fatura:
+    - text: "Na página Operações tem uma secção Documentos Legais. O documento que comprova a operação Cofidis Pay é a Notificação da Cedência da Fatura. Pode visualizar e ainda descarregar o documento para o seu dispositivo móvel."
+
+  utter_faq/consultar_fatura_cedida:
+    - text: "Na página Operações tem uma secção Documentos Legais. O documento que comprova a compra do bem ou serviço através da solução Cofidis Pay é a Fatura da Operação Cofidis Pay (que corresponde a uma imagem da fatura), enviada pelo parceiro onde foi concluída a operação. Pode visualizar e ainda descarregar o documento para o seu dispositivo móvel."
+
+  utter_faq/varias_operacoes_cofidispay:
+    - text: "Pode efetuar várias operações nos limites de aceitação e conforme a política comercial e de risco da Cofidis Portugal. Pode ainda ter mais que uma compra com a Cofidis Pay a decorrer em simultâneo."
+
+  utter_faq/consultar_dia_vencimento:
+    - text: "Pode consultar o dia de vencimento da prestação Cofidis Pay na Home Page da sua aplicação ou nas páginas Operações ou Movimentos, no quadro resumo. Recordo-lhe que as prestações são sempre debitadas ao dia 1 de cada mês, não sendo possível a alteração do dia de vencimento."
+
+  utter_faq/consultar_data_prox_prestacao:
+    - text: "Tem várias formas de saber qual a data do pagamento Cofidis Pay! Pode consultar logo na Home Page da aplicação ou nas páginas Operações ou Movimentos, através do quadro de resumo."
+
+  utter_faq/consultar_data_primeira_prestacao:
+    - text: "Pode consultar a data da primeira prestação Cofidis Pay na página Movimentos, onde encontra informação e uma representação gráfica de todas as prestações mensais acordadas."
+
+  utter_faq/consultar_data_ultima_prestacao:
+    - text: "Pode consultar a data prevista para o pagamento da última prestação Cofidis Pay na página Movimentos, onde encontra informação e uma representação gráfica de todas as prestações mensais acordadas."
+
+  utter_faq/consultar_valor_prestacao:
+    - text: "Tem várias formas de relembrar o valor acordado para cada prestação! Pode consultar logo na Home Page ou nas páginas de Operações ou Movimentos, através do quadro de resumo."
+
+  utter_faq/alterar_valor_prestacao:
+    - text: "O valor da prestação não pode ser alterado até ao fim do prazo acordado para o pagamento do montante referente à operação Cofidis Pay. Recordo que o valor de cada prestação foi acordado entre si e o comerciante na operação de compra."
+
+  utter_faq/alterar_dia_prestacao:
+    - text: "Infelizmente, não é possível alterar o dia de vencimento da prestação. Recorde-se que a mesma é sempre debitada ao dia 1 de cada mês."
+
+  utter_faq/prestacao_paga:
+    - text: "Enviamos sempre uma notificação de pagamento bem-sucedido através da aplicação. Se não viu, não se preocupe! Pode sempre consultar o estado de todos os pagamentos na página Movimentos."
+
+  utter_faq/prestacao_erro:
+    - text: "Notificamos sempre se ocorrer um erro na tentativa de cobrança através da aplicação. Alerto que as cobranças são feitas no primeiro dia de cada mês e, caso hajam prestações em atraso, será calculado um valor diário adicional referente a juros do valor cujo pagamento está atrasado."
+
+  utter_faq/consultar_info_prestacao:
+    - text: "Na página Movimentos, pode visualizar o respetivo estado de cada prestação associadas a cada operação Cofidis Pay. Para facilitar, tem à sua disposição uma representação gráfica de todas as prestações. Alerto que a atualização do estado de cada prestação para 'paga' pode demorar alguns dias após o pagamento ter sido efetuado por si, mas não se preocupe!"
+
+  utter_faq/consultar_valores_atraso:
+    - text: "Valores a regularizar estão sempre presentes na página Movimentos. Apresentamos logo o valor em atraso e respetivos juros (atualizados ao dia). Ainda tem acesso à informação sobre a forma de proceder à regularização desse valor."
+
+  utter_faq/pagar_valores_atraso:
+    - text: "Pode fazer um Pagamento Pontual de valores em atraso. Para tal, basta consultar a Referência de Multibanco que está disponível na página Operações. O valor total em atraso é visível na Home Page (em forma de alerta), como também no quadro de resumo da página Movimentos. "
+
+  utter_faq/consultar_dados_atm:
+    - text: "No quadro resumo da página de Movimentos encontra informação sobre como regularizar valores em atraso. Na página Operações tem sempre disponível uma Referência de Multibanco para pagamento de prestações ou valores em dívida."
+
+  utter_faq/consultar_fatura_atraso:
+    - text: "Na página Operações tem uma secção de Documentos Legais. Caso o cliente incumpra no pagamento de alguma prestação e sejam calculados juros de atraso, no momento da regularização dos valores será emitida uma fatura referente ao pagamento do juros (e respetivo Imposto de Selo), denominada Fatura Cofidis. Pode visualizar e ainda descarregar o documento para o seu dispositivo móvel."
+
+  utter_faq/comunicacao_BdP:
+    - text: "Consoante o artigo 3.º do Decreto-Lei n.º 204/2008 de 14 de outubro e do número 9.2 da Instrução n.º 17/2018 do Banco de Portugal, caso tenha valores por regularizar e o montante permaneça em atraso por mais de 90 dias, a Cofidis é legalmente obrigada a comunicar o incumprimento à Central de Responsabilidades de Crédito do Banco de Portugal."
+
+  utter_faq/definir_palavrachave:
+    - text: "Irá definir uma palavra-chave no momento de registo na aplicação Cofidis Pay. É esta palavra-chave que irá usar sempre que fizer login. Para sua segurança, a palavra-chave deve cumprir as seguintes regras: mínimo de 6 caracteres, pelo menos 1 número, 1 letra maiúscula, 1 letra minúscula e 1 símbolo (@#$%^&*)."
+
+  utter_faq/alterar_palavrachave:
+    - text: "Pode alterar a palavra-chave de acesso à Cofidis Pay através da Home Page. No canto inferior da página, existe o menu das Definições com a opção de Alteração da palavra-chave. Relembro que, caso seja utilizador da área de clientes Cofidis, qualquer alteração de palavra-chave feita na aplicação Cofidis Pay terá impacto no acesso à Área de Cliente (Cofinet), pois os dados de acesso são os mesmos."
+
+  utter_faq/recuperar_palavrachave:
+    - text: "Se não se recorda da sua palavra-chave, não se preocupe, tem disponível uma opção de recuperação. Irá receber no seu telemóvel um SMS com um código de autenticação, que deverá inserir no campo respetivo. Após validação desse código, ser-lhe-á solicitado que defina uma nova palavra-chave. Relembro que, caso seja utilizador da área de clientes Cofidis, qualquer alteração de palavra-chave feita na aplicação Cofidis Pay terá impacto no acesso à Área de Cliente (Cofinet), pois os dados de acesso são os mesmos."
+
+  utter_faq/OTP_paraqueserve:
+    - text: "Quando pretende recuperar a palavra-chave de acesso à Cofidis Pay, um código one time password (OTP) é enviado por SMS com um número de segurança, só após a validação desde código poderá definir uma nova palavra-chave."
+
+  utter_faq/OTP_IBAN_paraqueserve:
+    - text: "O código OTP (one time password) surge para validar e concluir a alteração de IBAN com total segurança para pagamentos de débito direto."
+
+  utter_faq/OTP_nao_recebido:
+    - text: "Às vezes, pode demorar um pouco a receção do SMS com o código OTP. Aconselho que peça o reenvio do mesmo. Caso não resulte, então tem a nossa equipa de Apoio a Cliente Cofidis Pay para o ajudar. Contacte-os através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+
+  utter_faq/OTP_reenvio:
+    - text: "Caso não receba o SMS com um código de segurança (OTP) para proceder à recuperação da palavra-chave, pode solicitar o reenvio do referido código. Se continuar sem receber o SMS, contacte a nossa equipa de Apoio a Clientes Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+
+  utter_faq/palavrachave_cofinet:
+    - text: "Caso seja utilizador da Área de Clientes Cofidis (Cofinet), as credenciais de acesso ao Cofidis Pay estendem-se também a esta plataforma. Ou seja, deverá utilizar o mesmo Username (NIF) e Palavra-chave. Assim, alerto, caso altere ou proceda a uma recuperação de palavra-passe, o impacto será tanto na Área de Cliente como na aplicação Cofidis Pay."
+
+  utter_faq/envio_notificacoes:
+    - text: "Claro que a aplicação Cofidis Pay envia notificações! Temos notificações logo quando entra na aplicação e fora do ambiente da mesma. As principais notificações estão sempre presentes na Home Page, indicando a página referente ao assunto da notificação. É possível ainda consultar o histórico de notificações, que está no topo direito também da Home Page."
+
+  utter_faq/gestao_notificacoes:
+    - text: "Pode fazer a gestão geral das notificações na página Definições, ativando ou desativando as mesmas."
+
+  utter_faq/consulta_historico_notificacoes:
+    - text: "Pode consultar o histórico de notificações recebidas clicando no símbolo de notificação que encontra no topo direito da Home Page."
+
+  utter_faq/caixa_mensagens:
+    - text: "Use a página Caixa de Mensagem e tenha acesso a todas as comunicações enviadas para si. Pode aceder às mensagens recebidas (por ler) ou arquivá-las para ler mais tarde. Pode ainda, num separador diferente, aceder ao histórico da última conversação de chat que tenha realizado."
+
+  utter_faq/consulta_caixa_mensagens:
+    - text: "Pode consultar o histórico de todas as mensagens enviadas para si na página Caixa de Mensagens. Pode aceder às mensagens recebidas (por ler) ou arquivá-las para ler mais tarde. Num diferente separador, pode ainda aceder ao histórico da última conversação de chat que tenha realizado."
+
+  utter_faq/arquivar_mensagens:
+    - text: "Pode arquivar mensagens recebidas num diferente separador da página Caixa de Mensagens."
+
+  utter_faq/como_pedir_ajuda:
+    - text: "Caso tenha questões sobre a aplicação ou o produto Cofidis Pay, pode aceder à página de Apoio ao Cliente."
+
+  utter_faq/opçoes_ajuda_disponiveis:
+    - text: "Caso tenha questões sobre a aplicação ou o produto Cofidis Pay, pode aceder à página de Apoio ao Cliente. Nesta página, tem à sua disposição o Assistente Virtual da Cofidis, e, se necessário, um dos nossos especialistas estará disponível para rapidamente esclarecer as suas dúvidas. Encontra também um conjunto de Perguntas Mais Frequentes, com as informações mais importantes sobre a aplicação e o produto Cofidis Pay. Para mais questões, contacte a nossa equipa de Apoio a Clientes Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+
+  utter_faq/contactar_apoio_cofidispay:
+    - text: "Pode contactar diretamente o Apoio ao Cliente Cofidis Pay através do nº 21 761 18 90 ou e-mail: cofidispaycliente@cofidis.pt."
+
+  utter_faq/mais_ajuda:
+    - text: "Caso tenha questões sobre a aplicação ou o produto Cofidis Pay e não tiver ficado esclarecido através da página de Apoio ao Cliente, pode ainda contactar diretamente a nossa equipa de Apoio a Clientes Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligar para o 217 611 890."
+
+  utter_faq/termos_e_condicoes:
+    - text: "Pode consultar os Termos e Condições da aplicação Cofidis Pay na página Definições. A aplicação Cofidis Pay é disponibilizada pela Cofidis aos seus clientes de acordo com condições constantes dos Termos e Condições, aceites por si quando acedeu pela primeira vez à aplicação."
+
+  utter_faq/politica_de_privacidade:
+    - text: "Pode consultar a Politica de Privacidade da Cofidis na página Definições."
+
+  utter_faq/politica_consentimento:
+    - text: "Pode consultar a Politica de Consentimento e Tratamento de Dados Pessoais da Cofidis na página Definições."
+
+  utter_faq/como_terminar_sessao:
+    - text: "Pode terminar a sessão na aplicação Cofidis Pay na página Definições. Ao terminar sessão, deve fazer novo Login quando voltar a entrar na aplicação. Não se esqueça da palavra-chave!"
+
+  utter_faq/como_aceder_definicoes:
+    - text: "Pode aceder às definições da aplicação Cofidis Pay através do menu Definições que encontra no canto inferior direito da Home Page."
+
+  utter_faq/cofidispay_cofinet:
+    - text: "A aplicação Cofidis Pay é destinada a clientes Cofidis que tenham aderido a esta solução de pagamento. Caso seja cliente Cofidis e com outro tipo de produtos para além do Cofidis Pay, poderá continuar a aceder à Área de Cliente Cofidis, sendo que a gestão do Cofidis Pay deverá ser feita através desta aplicação. Para mais informações, contacte a nossa equipa de Apoio a Clientes Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+
+  utter_faq/anular_operacao:
+    - text: "Para anular ou cancelar uma operação, aconselho que contacte diretamente o comerciante onde realizou a compra do bem ou serviço através da Cofidis Pay. Em caso de dúvida, já sabe! Contacte o Apoio a Cliente Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+
+  utter_faq/utilizador_cofinet:
+    - text: "Caso já seja cliente Cofidis com acesso à Área de Clientes, o Login na aplicação Cofidis Pay é feito da mesma forma (mesmo Número de Contribuinte e Palavra-chave). Relembro que qualquer alteração de Palavra-chave feita na aplicação Cofidis Pay ou na Área de Clientes tem impacto em ambos, pois os dados de acesso são os mesmos."
+
+  utter_faq/pagamento_duplicado:
+    - text: "Caso verifique um débito em duplicado, consulte logo o seu banco. Em alternativa, contacte o Apoio a Cliente Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+
+  utter_faq/oferta_cofidis:
+    - text: "Na página Serviços Cofidis, tem acesso a contéudos alusivos à Oferta de Produtos e Serviços da Cofidis. Pode escolher o produto ou serviço que pretende consultar e será redirecionado para o site da Cofidis, onde encontrará todo o detalhe que procura."
+
+  utter_faq/produto_nao_abre:
+    - text: "Na página Serviços, ao selecionar a opção de 'Ver Mais', presente junto ao produto que consulta, irá ser encaminhado para o site da Cofidis (sairá da aplicação). Caso a página não esteja a carregar ou fique bloqueada, certifique-se que tem a versão mais recente da aplicação."
+
+  utter_faq/dicas_nao_abre:
+    - text: "Na página Dicas, ao selecionar a opção de 'Ler Mais', presente junto ao artigo que consulta, irá ser encaminhado para o site do Contas Connosco (sairá da aplicação). Caso a página não esteja a carregar ou fique bloqueada, certifique-se que tem a versão mais recente da aplicação."
+
+  utter_faq/dicas:
+    - text: "Na página Dicas e Sugestões, tem acesso aos conteúdos exclusivos do Contas Connosco by Cofidis. Pode escolher o artigo que mais gostaria de ler e será reencaminhado para a página do Contas Connosco."
+
+  utter_faq/contas_connosco:
+    - text: "O Contas Connosco by Cofidis é um espaço informativo cujo objetivo é melhorar a relação das pessoas com o dinheiro. O Contas Connosco agrega num único espaço várias temáticas relacionadas com a gestão do dinheiro e das finanças pessoais, e procura clarificar os temas que são confusos ou pouco claros, aconselhando sempre que possível. Procura não só esclarecer as pessoas como ajudá-las a aumentar a sua qualidade de vida, através de informação útil e prática."
+
+  utter_faq/erro_alteracao_IBAN_cartao_bancario:
+    - text: "Pode ser chato, mas tente verificar se tem a versão mais recente da aplicação em primeiro lugar. Caso o erro se mantenha, não se preocupe! Contacte o Apoio a Cliente Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+  
+  utter_faq/pagamento_nao_atualizado:
+    - text: "Saiba que o seu histórico de prestações pode ainda não refletir o seu último pagamento, mas não se preocupe! Poderemos simplesmente estar a aguardar confirmação por parte do seu banco dos débitos realizados. Se aguardar alguns dias mas o seu histórico de prestações não atualizar, contacte a nossa equipa de Apoio a Clientes Cofidis Pay através do e-mail cofidispaycliente@cofidis.pt ou ligue para o 217 611 890."
+  
+  utter_faq/consultar_autorizacao_sepa:
+    - text: "Na página Operações tem uma secção Documentos Legais. O documento que comprova a autorização para débito direto das prestações mediante o IBAN indicado no momento da compra do bem ou serviço através da solução Cofidis Pay é a Autorização de Débito Direto SEPA. Pode visualizar e ainda descarregar o documento para o seu dispositivo móvel."
+  
+  utter_faq/pagamento_pontual:
+    - text: "Na página Movimentos, pode consultar a valor total que possa eventualmente ter em atraso (atualizado ao dia). Aqui vai encontrar também informação sobre como proceder para a sua regularização. A Cofidis procede a algumas tentativas de cobrança de cada prestação nos primeiros dias de cada mês. Saiba que se efetuar o pagamento de valores em atraso no início do mês através de um pagamento pontual, esse pagamento não irá inibir as tentativas de cobrança já agendadas."
+
+  utter_chitchat/ask_weather:
+    - text: "Lamento, não consigo responder a essa questão, mas espero que esteja um ótimo dia! Como o podemos ajudar a esclarecer as suas questões relacionadas com o CofidisPay?"
+
+  utter_chitchat/bot_challenge:
+    - text: "Sou o Assistente Virtual da Cofidis e estou aqui para ajudar com as suas questões relacionadas com o CofidisPay. Em que posso ajudar?"
+
+  utter_chitchat/bot_ask_how_are_you:
+    - text: "Obrigado por perguntar! Estou pronto para responder às suas dúvidas sobre o CofidisPay! Como podemos ajudar?"
+
+  utter_chitchat/bot_ask_age_time:
+    - text: "O tempo é algo relativo, não concorda? O que importa é que pode contar comigo para esclarecer as suas dúvidas relacionadas com o CofidisPay. Como podemos ajudar?"
+
+  utter_chitchat/compliments:
+    - text: "Obrigado, é sempre bom receber elogios! Mas vamos focar-nos em si, afinal de contas, estou aqui para ajudar os clientes CofidisPay. Por favor, indique a sua questão na caixa de mensagem."
+
+  utter_chitchat/complaints:
+    - text: "Lamento não ter sido útil, estou a aprender e a esforçar-me para melhorar as minhas respostas. Poderia reformular a sua questão para o conseguirmos ajudar?"
+
+  utter_chitchat/go_on_date:
+    - text: "Infelizmente, ainda não consigo ajudar nesse assunto! Mas estou aqui para esclarecer as suas dúvidas relacionadas com o CofidisPay. Em que podemos ajudar?"
+
+  utter_chitchat/sad_mood:
+    - text: "Lamento saber, mas se tiver dúvidas sobre o CofidisPay pode contar connosco. Estamos aqui para o ajudar! Por favor, indique a sua questão na caixa de mensagem"
+
+  utter_chitchat/joke:
+    - text: "Lamento, não consigo aceder ao seu pedido, mas nunca deixe de sorrir! Tem alguma questão relacionada com o CofidisPay?"
+
+  utter_chitchat/bot_likes:
+    - text: "Essa é uma boa questão, mas prefiro falar sobre outro assunto. Talvez uma questão relacionada com o CofidisPay?"

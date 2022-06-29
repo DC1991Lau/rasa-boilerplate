@@ -1,0 +1,806 @@
+version: "2.0"
+
+nlu:
+  - intent: faq/dadospessoais
+    examples: |
+      - Onde posso consultar dados pessoais?
+      - os meus dados pessoais 
+      - meus dados pessoais  
+      - meus dados
+      - consultar dados pessoais  
+      - dados pessoais 
+      - ver dados pessais 
+      - consulta dados pessoais
+      - onde consultar dados pessoais?
+      - onde posso ver os meus dados?
+
+  - intent: faq/dadospagamento
+    examples: |
+      - Onde posso consultar dados de pagamento?
+      - consulta dados pagamento  
+      - consultar pagamento  
+      - dados pagar
+      - pagamento
+      - ver dados de pagamento
+      - onde ver dados de pagamento?
+
+  - intent: faq/alterar_dadospessoais
+    examples: |
+      - Onde posso alterar os meus dados pessoais?
+      - alterar dados pessoais
+      - alterar os meus dados
+      - como alterar os meus dados pessoais?
+      - como mudar os meus dados?
+      - alterar nome
+      - como alterar o meu telemovel
+      - como alterar o email
+      - mudar o meu email
+      - quero mudar o meu numero de telemóvel 
+      - e alterar dados pessoais?
+
+  - intent: faq/definir_foto
+    examples: |
+      - Como posso definir uma fotografia de perfil ?
+      - fotografia
+      - definir fotografia
+      - definir foto
+      - definir foto de perfil
+      - definir fotografia de perfil
+      - foto de perfil
+
+  - intent: faq/alterar_foto
+    examples: |
+      - Como posso alterar a minha fotografia de perfil ?
+      - alterar a minha foto
+      - como alterar fotografia
+      - como alterar a foto de perfil?
+      - como mudar a foto de perfil?
+
+  - intent: faq/consulta_cartao_ativo
+    examples: |
+      - Onde posso consultar o cartão bacário ativo?
+      - consulta a cartão ativo
+      - consultar cartão
+      - ver cartao bancário ativo
+      - como consultar cartao bancario ativo?
+
+  - intent: faq/alterar_cartao_ativo
+    examples: |
+      - Como posso alterar o cartão bancário ativo?
+      - como alterar o meu cartão
+      - alterar cartão ativo
+      - cartão multibanco alterar
+      - como mudar o meu cartão bancário ativo?
+      - alterar cartao bancario ativo
+      - bancário?
+      - bancário
+      - bancario
+
+  - intent: faq/cartoes_permitidos
+    examples: |
+      - Que cartões bancários são permitidos em operações CofidisPay?
+      - que cartões são validos?
+      - cartoes validos
+      - cartoes bancarios permitidos
+      - cartões bancários permitidos
+
+  - intent: faq/leitura_cartao
+    examples: |
+      - Como procedo à leitura (fotografia) do cartão bancário ?
+      - como fazer a leitura do cartao bancario
+      - leitura do cartão
+      - leitura de cartão bancário
+      - como fazer leitura de cartao bancario
+
+  - intent: faq/cartao_invalido
+    examples: |
+      - O que faço quando o cartão bancário é inválido?
+      - cartao inválido o que fazer
+      - cartao invalido
+      - o meu cartão bancário é inválido, o que fazer?
+      - cartão bancário inválido
+
+  - intent: faq/cartao_caducar_oquefazer
+    examples: |
+      - O que faço quando o cartão bancário está a caducar?
+      - cartão está a caducar e agora?
+      - cartão a caducar o que fazer?
+      - como proceder quando cartão bancário está a caducar?
+      - o que fazer quando cartao a caducar
+
+  - intent: faq/cartao_caducar_comosaber
+    examples: |
+      - Como sei que o cartão bancário está a caducar?
+      - cartão a caducar, como saber?
+      - cartão bancário está a caducar?
+      - cartão bancário está a caducar, como saber ?
+      - cartão bancário está a caducar, como saber
+      - como saber se cartao a caducar
+
+  - intent: faq/consultar_iban
+    examples: |
+      - Onde posso consultar o IBAN ?
+      - onde posso ver o iban
+      - iban
+      - IBAN
+      - como consultar o meu Iban?
+      - ver iban
+      - débito directo
+      - debito directo
+      - debito direto
+
+  - intent: faq/alterar_iban
+    examples: |
+      - Como posso alterar o IBAN ?
+      - alterar iban
+      - alterar IBAN
+      - mudar IBAN
+      - como mudar o Iban?
+      - como alterar o iban
+
+  - intent: faq/pagamentos_pontuais
+    examples: |
+      - Como posso realizar pagamentos pontuais?
+      - pagamentos pontuais
+      - posso fazer pagamentos pontuais?
+      - como fazer pagamentos pontuais?
+      - fazer pagamentos pontuais
+
+  - intent: faq/consultar_movimentos
+    examples: |
+      - Onde posso consultar movimentos?
+      - consultar movimentos
+      - consulta a movimentos
+      - como consultar movimentos?
+      - como ver os movimentos?
+      - onde consultar movimentos?
+      - onde consultar os meus movimentos
+
+  - intent: faq/consultar_historico_prestacao
+    examples: |
+      - Onde posso consultar o histórico das minhas prestações?
+      - onde ver as prestações?
+      - ver historico prestaçoes
+      - histórico das minhas prestações
+      - consultar o histórico das minhas prestações
+
+  - intent: faq/consultar_prestacao_futura
+    examples: |
+      - Onde posso consultar as prestações futuras?
+      - proximas prestaçoes
+      - consultar prestações futuras
+      - consultar próximas prestações
+      - consultar proximas mensalidades
+
+  - intent: faq/filtrar_movimentos
+    examples: |
+      - Como posso filtrar movimentos?
+      - filtrar movimentos
+      - movimentos filtrar
+      - filtrar
+      - como filtrar movimentos?
+
+  - intent: faq/operacao_cofidispay
+    examples: |
+      - Em que consiste a operação CofidisPay ?
+      - operação cofidispay o que é?
+      - operação cofidispay?
+      - CofidisPay
+      - o que é uma operação cofidispay?
+      - crédito
+
+  - intent: faq/prazo_operacao_cofidispay
+    examples: |
+      - Onde posso consultar o prazo da operação CofidisPay?
+      - como ver o parzo da operação cofidispay?
+      - como ver o prazo da operação cofidispay
+      - consultar prazo da operação cofidispay
+      - onde consultar prazo operação cofidispay?
+      - prazo
+
+  - intent: faq/consultar_nome_operacao_cofidispay
+    examples: |
+      - Onde posso consultar o nome da operação CofidisPay ?
+      - como ver o nome da operação cofidispay?
+      - saber o nome da operação cofidispay
+      - nome operação CofidisPay
+      - consultar nome operação cofidispay
+
+  - intent: faq/alterar_nome_operacao_cofidispay
+    examples: |
+      - Onde posso alterar o nome da operação CofidisPay ?
+      - posso alterar nome da operação?
+      - alterar nome da operação cofidispay
+      - onde alterar o nome da operação CofidisPay
+
+  - intent: faq/consultar_numero_prestacao
+    examples: |
+      - Onde posso consultar o número total de prestações ?
+      - numero total de prestações
+      - quantas prestações
+      - consultar prestações
+      - total de prestações
+      - número total de prestações
+      - consultar numero total de prestações
+
+  - intent: faq/pagamento_prestacao
+    examples: |
+      - Como se processa o pagamento das prestações?
+      - pagamento de prestações
+      - como se faz o pagamento de prestações?
+      - pagamento de mensalidades, como é?
+
+  - intent: faq/consultar_montante_total
+    examples: |
+      - Onde posso consultar o montante total da operação ?
+      - valor total da operação
+      - montante total da operacao 
+      - consulta a montante total da operações
+      - consultar o montante total da operação
+
+  - intent: faq/alterar_plano_pagamento
+    examples: |
+      - Como posso alterar o plano de pagamento (amortização ou liquidação antecipada)?
+      - alterar plano de pgmento 
+      - alterar plano de pagamento
+      - amortizar
+      - como amortizar
+      - como pagar tudo
+      - posso pagar mais tarde?
+      - pagar mais tarde
+
+  - intent: faq/consulta_num_dossier
+    examples: |
+      - Onde posso consultar o número que identifica a operação (número do dossier)?
+      - numero de dossier
+      - consulta numero de processo
+      - consultar o número que identifica a operação
+      - qual o numero do processo
+      - onde consultar o numero de dossier
+
+  - intent: faq/consultar_doc_cedencia_fatura
+    examples: |
+      - Onde posso consultar o documento da cedência da fatura ?
+      - onde ver a cedencia da fatura
+      - onde ver o documento da cedencia da fatura
+      - documento de cedencia da fatura
+      - documento
+      - documentos
+      - cedencia
+      - cedência
+
+  - intent: faq/consultar_fatura_cedida
+    examples: |
+      - Onde posso consultar a fatura cedida?
+      - consultar fatura cedida?
+      - ver fatura cedida
+      - onde ver a fatura cedida
+      - onde consultar a fatura cedida
+      - consulta faturas
+      - onde obtenho a fatura?
+      - obter fatura
+
+  - intent: faq/consultar_fatura_cofidis
+    examples: |
+      - Onde posso consultar a Fatura Cofidis referente ao pagamento de valores em atraso?
+      - fatura cofidis de pagamento de valores em atraso
+      - consulta a fatura cofidis de pagamento de valores em atraso
+      - consultar fatura cofidis de pagamento de valores em atraso
+      - pagamento de valores em atraso
+
+  - intent: faq/varias_operacoes_cofidispay
+    examples: |
+      - Posso ter mais do que uma operação CofidisPay ?
+      - quantas operações cofidispay posso ter
+      - mais do que uma operação CofidisPay?
+      - posso ter várias operações cofidispay?
+      - posso ter mais do que um cofidispay
+
+  - intent: faq/consultar_dia_vencimento
+    examples: |
+      - Onde posso consultar o dia de vencimento das prestações ?
+      - dia de vencimento mensalidade
+      - dia de vencimento prestação
+      - consultar dia de vencimento prestação
+      - dia de vencimento consulta
+      - qual o dia de vencimento da mensalidade?
+      - dia de vencimento
+
+  - intent: faq/consultar_data_prox_prestacao
+    examples: |
+      - Onde posso consultar a data da próxima prestação ?
+      - data proxima prestaçao
+      - data prox mensalidade
+      - proxima prestaçao
+      - consultar data proxima mensalidade
+      - onde ver a data da proxima mensalidade?
+      - onde consultar prox mensalidade
+      - onde consultar data prox prestação?
+      - data
+      - data da mensalidade
+
+  - intent: faq/consultar_data_primeira_prestacao
+    examples: |
+      - Onde posso consultar a data da primeira prestação ?
+      - primeira mensalidade?
+      - consultar primeira prestação
+      - onde ver a data da primeira mensalidade?
+      - consultar 1a prestação 
+      - consultar a data da 1ª prestação
+      - onde ver a 1a mensalidade?
+      - primeira prestação
+
+  - intent: faq/consultar_data_ultima_prestacao
+    examples: |
+      - Onde posso consultar a data da última prestação ?
+      - ultima prestação
+      - ver última prestação
+      - última prestação
+      - ver ultima mensalidade
+      - consultar ultima prestação
+      - onde consular a data da ultima prestaçao
+      - onde consultar a data da última prestação?
+      - data da última prestação ?
+
+  - intent: faq/consultar_valor_prestacao
+    examples: |
+      - Onde posso consultar o valor da prestação?
+      - valor da prestação
+      - consultar valor da prestaçao
+      - consulta prestação
+      - Onde consultar o valor da prestação?
+      - onde ver o valor da mensalidade?
+      - valor
+
+  - intent: faq/alterar_valor_prestacao
+    examples: |
+      - Como posso alterar o valor da prestação?
+      - alterar valor da prestaçao  
+      - como mudar valor da mensalidade
+      - como alterar o valor da prestação?  
+      - alterar o valor da prestação
+
+  - intent: faq/alterar_dia_prestacao
+    examples: |
+      - Como posso alterar o dia de vencimento da prestação?
+      - alterar dia da prestação
+      - como alterar dia da mensalidade
+      - como aletrar dia de vencimento da prestacao
+
+  - intent: faq/prestacao_paga
+    examples: |
+      - Como posso saber que a prestação foi paga com sucesso?
+      - mensalidade está paga?
+      - prestação paga
+      - como saber se a mensalidade foi paga
+      - como saber se a prestação foi paga
+
+  - intent: faq/prestacao_erro
+    examples: |
+      - Como posso saber que ocorreu um erro no pagamento da prestação?
+      - erro no pagamento da mensalidade
+      - erro no pagamento da prestacao
+      - erro no pagamento da prestação consulta
+      - saber se erro no pagamento da prestação
+      - como saber se houve erro no pagamento
+
+  - intent: faq/consultar_info_prestacao
+    examples: |
+      - Onde posso consultar informação de prestações pagas ou não pagas?
+      - onde ver as prestações pagas
+      - onde ver as mensalidades pagas
+      - prestações pagas e não pagas
+
+  - intent: faq/consultar_valores_atraso
+    examples: |
+      - Onde posso consultar valores em atraso?
+      - valores em atraso
+      - onde ver os valores em atraso
+      - consultar valores em atraso
+      - quero saber o valor da minha divida
+      - valor da divida
+
+  - intent: faq/pagar_valores_atraso
+    examples: |
+      - Como posso proceder ao pagamento de valores em atraso?
+      - pagar valores em atraso
+      - como fazer o pagamento dos valores em atraso
+      - atraso
+      - Atraso
+
+  - intent: faq/consultar_dados_atm
+    examples: |
+      - Onde posso consultar dados para pagamento por multibanco ?
+      - pagamento multibanco
+      - dados pagamento multibanco
+      - referências multibanco
+      - referencias multibanco 
+      - multibanco
+
+  - intent: faq/consultar_fatura_atraso
+    examples: |
+      - Onde posso consultar a Fatura Cofidis, referente ao pagamento de valores em atraso ?
+      - consulta fatura cofidis valores em atraso
+      - consulta fatura valores em atraso
+      - fatura pagamento valores em atraso
+      - fatura valores em atraso
+      - fatura atraso
+      - Fatura Cofidis, referente ao pagamento de valores em atraso
+
+  - intent: faq/comunicacao_BdP
+    examples: |
+      - Como se processa a comunicação de incumprimento ao Banco de Portugal ?
+      - comunicaçao de incumprimento
+      - incumprimento banco de Portugal
+      - CRC
+      - Banco de Portugal
+
+  - intent: faq/definir_palavrachave
+    examples: |
+      - Quando devo definir uma palavra-chave ?
+      - quando devo definir a password
+      - definir palavra chave
+
+  - intent: faq/alterar_palavrachave
+    examples: |
+      - Como posso alterar a palavra-chave ?
+      - alterar palavra-chave
+      - alterar password
+      - alterar palavra chave
+      - alterar palavra
+      - qual palavra
+
+  - intent: faq/recuperar_palavrachave
+    examples: |
+      - Como posso recuperar a palavra-chave?
+      - recuperar palavra chave
+      - recuperar password
+      - recuperção palavra-chave
+      - recuperar palavra
+      - recuperar pass
+
+  - intent: faq/OTP_paraqueserve
+    examples: |
+      - Para que serve o código OTP na recuperação de palavra-chave ?
+      - Para que serve o código OTP na alteração de palavra-chave ?
+      - codigo OTP no palavra-chave
+      - o que é o código otp na alteração de palavra-chave?
+      - o que é o otp na alteração de palavra-chave?
+
+  - intent: faq/OTP_IBAN_paraqueserve
+    examples: |
+      - Para que serve o código OTP na alteração de IBAN ?
+      - codigo OTP no IBAN
+      - o que é o código otp na alteração de IBAN?
+      - o que é o otp na alteração de IBAN?
+
+  - intent: faq/OTP_nao_recebido
+    examples: |
+      - O que fazer quando não recebo o código OTP na recuperação de palavra-chave ?
+      - nao recebo o codigo OTP
+      - não recebi o codigo otp, o que fazer?
+
+  - intent: faq/OTP_reenvio
+    examples: |
+      - Posso solicitar o reenvio do código OTP?
+      - reenvio de codigo otp
+      - reenvio otp
+      - como pedir o reenvio codigo otp
+      - Palavra-chave
+      - reenvio de código OTP
+      - reenvio de otp
+
+  - intent: faq/palavrachave_cofinet
+    examples: |
+      - Qual o impacto da alteração de palavra-chave no acesso ao Cofinet (área de clientes Cofidis)?
+      - alterar palavra-chave e cofinet
+      - alteração de palavra-chave no acesso ao Cofinet
+      - o que acontece se mudar a password no cofinet?
+
+  - intent: faq/envio_notificacoes
+    examples: |
+      - A aplicação envia notificações automáticas?
+      - recebo notificações automaticas?
+      - a aplicaçao envia notificaçoes?
+      - Notificações
+      - Notificação
+      - Notificações automáticas
+
+  - intent: faq/gestao_notificacoes
+    examples: |
+      - Como posso gerir notificações ?
+      - posso gerir as notificações?
+      - como gerir notificaçoes 
+      - gerir notificações
+
+  - intent: faq/consulta_historico_notificacoes
+    examples: |
+      - Onde posso consultar histórico de notificações?
+      - consultar historico de notificações
+      - como consultar historico de notificaçoes?
+      - histórico de notificações
+
+  - intent: faq/caixa_mensagens
+    examples: |
+      - Para que serve a caixa de mensagens ?
+      - caixa de mensagens o que é?
+      - para que serve a caixa de mensagens?
+      - caixa de mensagens para que serve
+
+  - intent: faq/consulta_caixa_mensagens
+    examples: |
+      - Onde posso consultar histórico de mensagens ?
+      - ver historico de mensagens
+      - consultar histórico de mensagens 
+      - consultar mensagens
+      - ver mensagens
+
+  - intent: faq/arquivar_mensagens
+    examples: |
+      - Posso arquivar mensagens ?
+      - como guardar mensagens?
+      - posso guardar mensagens?
+      - como arquivar mensagens
+      - arquivar
+      - arquivo
+
+  - intent: faq/como_pedir_ajuda
+    examples: |
+      - Como pedir ajuda ou esclarecer uma dúvida?
+      - pedir ajuda
+      - tirar dúvidas
+      - como esclarecer duvidas?
+
+  - intent: faq/opçoes_ajuda_disponiveis
+    examples: |
+      - Que opções de ajuda estão disponíveis?
+      - outras opções de ajuda disponiveis
+      - que opções de ajuda existem?
+      - há outras opçoes de ajuda?
+      - opções de ajuda
+
+  - intent: faq/contactar_apoio_cofidispay
+    examples: |
+      - Como posso contactar o apoio CofidisPay ? 
+      - como contactar linha de apoio?
+      - apoio cofidispay
+      - contactos
+      - contactos cofidispay
+
+  - intent: faq/mais_ajuda
+    examples: |
+      - O que fazer se não fiquei esclarecido com a ajuda?
+      - mais ajuda
+      - preciso de mais ajuda
+      - não fiquei esclarecido com a ajuda, e agora?
+      - não fiquei esclarecido com a ajuda
+
+  - intent: faq/termos_e_condicoes
+    examples: |
+      - Onde posso consultar os Termos e Condições da aplicação?
+      - termos e Condições
+      - consultar termos e condiçoes
+      - Termos e Condições da aplicação
+      - Termos e Condições da aplicação da app
+      - Consultar Termos e Condições da aplicação
+      - onde vejo os termos da app?
+
+  - intent: faq/politica_de_privacidade
+    examples: |
+      - Onde posso consultar a Política de Privacidade da Cofidis?
+      - politica de Privacidade
+      - politica privacidade
+      - consultar politoca de privacidade
+      - Política de Privacidade da Cofidis
+      - Consultar Política de Privacidade da Cofidis
+      - privacidade
+      - Política
+      - politia
+
+  - intent: faq/politica_consentimento
+    examples: |
+      - Onde posso consultar a Política de Consentimento da Cofidis?
+      - consultar politica de consentimento
+      - politica de consentimento
+      - politica consentimento
+      - Política de Consentimento da Cofidis
+      - Consultar Política de Consentimento da Cofidis
+      - consentimento
+      - politica
+
+  - intent: faq/como_terminar_sessao
+    examples: |
+      - Como posso terminar a sessão na aplicação CofidisPay ?
+      - terminar sessão
+      - como terminar sessão?
+      - terminar a sessão na app
+      - sessão
+      - como fazer logout na app?
+
+  - intent: faq/como_aceder_definicoes
+    examples: |
+      - Como posso aceder às definições da aplicação?
+      - aceder as definições
+      - como aceder às definições?
+      - acesso às deficições
+      - definições
+      - definiçºoes, onde aceder?
+      - definicoes, onde aceder?
+
+  - intent: faq/cofidispay_cofinet
+    examples: |
+      - Qual a diferença entre o CofidisPay e o Cofinet ?
+      - cofidispay e cofinet
+      - diferença entre cofidispay e cofinet
+      - cofidispay e cofinet diferenças
+
+  - intent: faq/utilizador_cofinet
+    examples: |
+      - O que faço se já sou utilizador Cofinet (área de clientes Cofidis)?
+      - ja sou utilizador cofinet
+      - utilizador cofinet
+      - uso o cofinet
+      - cofinet
+      - já sou utilizador do Cofinet
+      - já sou utilizador da área de clientes Cofidis
+      - já sou utilizador do Cofinet o que fazer?
+
+  - intent: faq/erro_alteracao_IBAN_cartao_bancario
+    examples: |
+      - A página não responde
+      - Não consigo alterar o cartão bancário porque a página não responde
+      - Não consigo alterar o IBAN porque a página não responde
+      - Não consigo porque a página não responde
+      - Não responde
+      - A página não abre
+      - A página não abre quando tento alterar
+      - Não consigo alterar o IBAN
+      - Não consigo alterar o cartão bancário
+      - Dá erro ao alterar o IBAN
+      - Dá erro ao alterar o cartão
+      - não consigo alterar o meio de pagamento
+      - erro ao alterar o IBAN
+      - erro oa mudar o cartao bancário
+
+  - intent: faq/alterar_pagamento_mes
+    examples: |
+      - Posso alterar o meio de pagamento que tenho ativo em qualquer altura do mês?
+      - Posso alterar o pagamento a meio do mês?
+      - Posso alterar o meio de pagamento
+      - Não consigo alterar o meio de pagamento
+      - meio de pagamento
+      - Quero alterar o meio de pagamento
+      - Quero alterar a forma de pagamento
+
+  - intent: faq/pagamentos_pontuaisserve
+    examples: |
+      - Para que servem os pagamentos pontuais?
+      - Pagamentos pontuais
+      - O que são pagamentos pontuais
+      - quero fazer um pagamento pontual
+      - pagamento pontual
+      - pagamentos pontuais
+      - o que é um pagamento pontual?
+
+  - intent: faq/anular_operacao
+    examples: |
+      - Como posso anular ou cancelar uma operação CofidisPay?
+      - Quero anular uma operação CofidisPay
+      - Anular operação CofidisPay
+      - Gostava de anular uma operação CofidisPay
+      - anular uma operação
+      - anular operação
+      - o que é anular uma operação
+
+  - intent: faq/pagamento_duplicado
+    examples: |
+      - O que faço em caso de pagamento em duplicado da minha prestação?
+      - pagamento em duplicado da minha prestação?
+      - Paguei em duplicado uma prestação, e agora?
+      - Pagamento em duplicado
+      - O que é um pagamento em duplicado
+      - Pagamento duplicado
+
+  - intent: faq/oferta_cofidis
+    examples: |
+      - Como posso consultar a oferta de produtos e serviços Cofidis?
+      - Onde posso ver as ofertas e serviços da Cofidis?
+      - Onde posso ver as ofertas e produtos da Cofidis?
+      - Onde posso ver as produtos e serviços da Cofidis?
+      - Oferta de produtos Cofidis
+      - Serviços Cofidis
+      - Produtos e serviços Cofidis
+      - Produtos e serviços
+
+  - intent: faq/produto_nao_abre
+    examples: |
+      - Não consigo abrir um produto da página Serviços Cofidis
+      - Não consigo abrir um item da página Serviços
+      - Erro na página Serviços
+      - Quero abrir um produto na página Serviços Cofidis
+      - Como ver os produtos na página serviços cofidis
+
+  - intent: faq/dicas_nao_abre
+    examples: |
+      - Não consigo abrir a página Dicas Cofidis
+      - Não consigo abrir um artigo das Dicas
+      - Não consigo abrir um item da página Dicas
+      - Não consigo abrir a página das Dicas
+      - Não consigo abrir as Dicas
+      - Erro na página Dicas
+
+  - intent: faq/dicas
+    examples: |
+      - O que são as Dicas e Sugestões?
+      - dicas e sugestões
+      - Como saber dicas e sugestões
+      - Onde estão as dicas e sugestões
+      - Como ver dicas e sugestões
+
+  - intent: faq/contas_connosco
+    examples: |
+      - O que é o Contas Connosco by Cofidis?
+      - Contas Connosco by Cofidis
+      - Como saber Contas Connosco by Cofidis
+      - Como saber Contas Connosco 
+      - Onde estão as Contas Connosco 
+      - Onde estão as Contas Connosco by Cofidis
+      - Como ver Contas Connosco
+
+  - intent: faq/pagamento_nao_atualizado
+    examples: |
+      - O pagamento da prestação ainda não está atualizado na aplicação
+      - O pagamento da prestação não aparece atualizado
+      - Pagamento prestação não atualizado
+      - Prestação não atualizada
+      - Pagamento não atualizado
+
+  - intent: faq/pagamento_pontual
+    examples: |
+      - Pagamento pontual
+      - Fiz um pagamento pontual
+      - Onde consultar os pagamentos pontuais
+      - Fiz um pagamento pontual de valores em atraso
+      - O que é um pagamento pontual
+      - Pagamentos pontuais
+
+  - intent: faq/consultar_autorizacao_sepa
+    examples: |
+      - Onde posso consultar a autorização de debito direto?
+      - Autorização debito direto
+      - SEPA
+      - Autorização IBAN
+    
+  - synonym: Prestação
+    examples: |
+      - prestações
+      - prestação
+      - Prestações
+      - mensalidade
+      - mensalidades
+
+  - synonym: Documento
+    examples: |
+      - documentos
+      - doc
+      - docs
+      - documento
+
+  - synonym: pagamento
+    examples: |
+      - pagamentos
+      - pagar
+      - pagnto
+
+  - synonym: palavra chave
+    examples: |
+      - password
+      - senha
+      - palavra-chave
+
+  - synonym: terminar sessão
+    examples: |
+      - logout
+      - terminar sessao
+      - logoff
+      - fim sessão
