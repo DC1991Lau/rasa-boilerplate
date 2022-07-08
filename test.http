@@ -1,9 +1,9 @@
 # API
 
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/
+GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/
 
 # POST message
-POST   https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/webhooks/rest/webhook
+POST   https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/webhooks/rest/webhook
 content-type: application/json
 
 {
@@ -12,73 +12,42 @@ content-type: application/json
 }
 
 # GET conversation from sender_id 
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/conversations/user1/tracker
+GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/conversations/user1/tracker
 
 # GET story from conversation
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/conversations/user1/story
+GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/conversations/user1/story
 
 # GET domain
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/domain
+GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/domain
 
 # GET NLU logs
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/logs/
+GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/logs/
 
 # GET Intents
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/intents/
+GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/intents/
 
 
-
-
-  # returns an array of objects (user inputs) - conversation_id / model / time / {user_input - entities / intent - {name / confidence} / intent_ranking / text }
-
-# {
-# "conversation_id": "08b44d93-931e-4305-9054-d9c8f5fb844a",
-# "event_id": 17476,
-# "hash": "c47d1fc216d93242ee040374359fa22e",
-# "id": 859,
-# "model": "20220310-124135",
-# "tags": [],
-# "time": 1649753144.74728,
-# "user_input": {
-#   "entities": [],
-#   "intent": {"name": "faq/alterar_pagamento_mes", "confidence": 0.9999997616},
-#   "intent_ranking": [{"id": 8305115858588959000, "name": "faq/alterar_pagamento_mes", "confidence": 0.9999997616}],
-#   "text": "Quantos dias uteis tenho que pagar a mensalidade?"}
-# }
-
-
-# GET intents
-
-  # returns array of objects - intent
-
-  # [{"intent": "deny"}, {"intent": "faq/consultar_data_prox_prestacao"}]
-
-# POST training files
-
-# POST new response
-
-POST https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/nlg/update
+POST https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/nlg/update
 content-type: application/json
 
 {
-	"utter_name": "utter_greet",
-	"utter": "Hey Men"
+	"utter_name": "utter_greet1000",
+	"utter": "Hey Hugo"
 }
 
-POST https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/nlg/create
+POST https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/nlg/create
 content-type: application/json
 
 {
-	"utter_name": "utter_okclient",
-	"utter": "Hey Diogo"
+	"utter_name": "utter_greet1000",
+	"utter": "Hey Greg"
 }
 
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/api/nlg/getresponses
-
-#UPDATE response
+GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/nlg/getresponses
 
 
-POST https://5005-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu47.gitpod.io/webhooks/rest/webhook
+
+POST https://5005-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/webhooks/rest/webhook
 content-type: application/json
 
 {

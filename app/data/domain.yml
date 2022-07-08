@@ -16,6 +16,8 @@ responses:
   - text: Bye
   utter_greet:
   - text: Hey Men
+  utter_greet1000:
+  - text: Hey Hugo
   utter_greetaa:
   - text: Hey youu
   utter_greetaaa:
