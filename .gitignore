@@ -3,3 +3,6 @@ venv
 __init__.py
 __pycache__
 /data/postgres
+**/mongo-1
+**/mongo-2
+**/mongo-3

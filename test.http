@@ -3,7 +3,7 @@
 GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/
 
 # POST message
-POST   https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/webhooks/rest/webhook
+POST   https://5005-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/webhooks/rest/webhook
 content-type: application/json
 
 {

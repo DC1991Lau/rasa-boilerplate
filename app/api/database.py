@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:postgres@postgres/rasa"
+SQLALCHEMY_DATABASE_URL = "mongodb:///?Server=mongo&;Port=27017&Database=rasa&User=0&Password="
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={}

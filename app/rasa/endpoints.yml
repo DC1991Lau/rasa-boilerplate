@@ -1,11 +1,10 @@
 tracker_store:
-  type: SQL
-  dialect: "postgresql"
-  url: "postgres"
-  db: "rasa"
-  username: postgres
-  password: postgres
-  login_db: postgres
+  type: mongod
+  url: mongodb://mongo1:30001,mongo2:30002,mongo3:30003/rasa?replicaSet=rasa-mongo-replica-set
+  db: rasa
+  username:
+  password:
+  auth_source: ""
 
 lock_store:
   type: "redis"
