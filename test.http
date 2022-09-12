@@ -1,62 +1,49 @@
 # API
 
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/
 
 # POST message
-POST   https://5005-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/webhooks/rest/webhook
+POST   https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/webhooks/rest/webhook
 content-type: application/json
 
 {
-	"sender": "user1",
-	"message": "hello"
+	"sender": "user10033",
+	"message": "salada de batata"
 }
 
 # GET conversation from sender_id 
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/conversations/user1/tracker
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/conversations/user100/tracker
 
 # GET story from conversation
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/conversations/user1/story
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/conversations/user100/story
 
 # GET domain
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/domain
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/domain
 
 # GET NLU logs
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/logs/
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/logs/
 
 # GET Intents
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/intents/
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/intents/
 
 
-POST https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/nlg/update
+POST https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/nlg/update
 content-type: application/json
 
 {
-	"utter_name": "utter_greet1000",
-	"utter": "Hey Hugo"
+	"utter_name": "utter_greet",
+	"utter": "Cucu"
 }
 
-POST https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/nlg/create
+POST https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/nlg/create
 content-type: application/json
 
 {
-	"utter_name": "utter_greet1000",
-	"utter": "Hey Greg"
+	"utter_name": "utter_novo199",
+	"utter": "Hey Manel!!"
 }
 
-GET https://8080-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/api/nlg/getresponses
-
-
-
-POST https://5005-dc1991lau-rasaboilerpla-saewlv9judk.ws-eu51.gitpod.io/webhooks/rest/webhook
-content-type: application/json
-
-{
-    "sender": "user1",
-    "message": "quero falar com um agente",
-    "metadata":{
-        "username": "Diogo Costa"
-    }
-}
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/nlg/
 
 
 

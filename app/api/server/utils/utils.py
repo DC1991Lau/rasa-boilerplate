@@ -7,7 +7,7 @@ from pathlib import Path
 def get_intents():
 
     url = "http://rasa:5005/domain/"
-    headers = {'Accept': 'application/json'}
+    headers = {"Accept": "application/json"}
     payload = {}
 
     response = requests.request("GET", url, headers=headers)
@@ -23,7 +23,7 @@ def update_nlg(utter_name, utter):
 
     path = os.getcwd()
     print(path)
-    data_path = path + '/data/domain.yml'
+    data_path = path + '/domain.yml'
 
     with open(data_path) as file:
         documents = yaml.full_load(file)
@@ -37,7 +37,7 @@ def update_nlg(utter_name, utter):
         message = "A resposta ainda não existe"
 
         return {"message": message}
-
+ 
     documents['responses'] = utters
 
     with open(data_path, 'w') as file:
@@ -49,7 +49,7 @@ def create_nlg(utter_name, utter):
 
     path = os.getcwd()
     print(path)
-    data_path = path + '/data/domain.yml'
+    data_path = path + '/domain.yml'
 
     with open(data_path) as file:
         documents = yaml.full_load(file)
@@ -67,13 +67,13 @@ def create_nlg(utter_name, utter):
     with open(data_path, 'w') as file:
         documents = yaml.dump(documents, file)
     
-    return {"message" : "Resposta criada"}
+    return {utter_name : utter}
 
 def get_nlg():
 
     path = os.getcwd()
     print(path)
-    data_path = path + '/data/domain.yml'
+    data_path = path + '/domain.yml'
 
     with open(data_path) as file:
         documents = yaml.full_load(file)

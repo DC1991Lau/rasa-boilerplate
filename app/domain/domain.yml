@@ -15,7 +15,7 @@ responses:
   utter_goodbye:
   - text: Bye
   utter_greet:
-  - text: Hey Men
+  - text: Cucu
   utter_greet1000:
   - text: Hey Hugo
   utter_greetaa:
@@ -26,6 +26,8 @@ responses:
   - text: Great, carry on!
   utter_iamabot:
   - text: I am a bot, powered by Rasaaaaaaasaas.
+  utter_novo199:
+  - text: Hey Manel!!
   utter_okclient:
   - text: Hey Diogo
 session_config:

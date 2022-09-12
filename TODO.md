@@ -11,3 +11,13 @@
         [] Delete response
         [x] Get all responses
     [] Model Server
+    [x] Alterar tracker para mongo
+    [] Criar imagem action server
+    [x] Alterar API
+    [x] Ficheiro de dominio
+    [] Treinar modelos
+
+
+    volumes:
+     - domain/domain.yml
+     - data/mongo
