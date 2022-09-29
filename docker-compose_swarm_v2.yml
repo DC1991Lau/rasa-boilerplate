@@ -1,0 +1,106 @@
+version: "3.4"
+
+x-common-config: &common-config
+  deploy:
+    restart_policy:
+      condition: any
+    mode: replicated
+
+x-mongo-config: &mongo-confi
+
+services:
+  rasa:
+    image: rasa/rasa:latest-full
+    user: "root"
+    <<: *common-config
+    volumes:
+      - "./app/rasa:/app/"
+    command: >
+      run 
+      --endpoints endpoints.yml
+      -m models
+      --enable-api
+      --cors "*"
+      --debug
+    depends_on:
+      - mongo-rs0-1
+      - mongo-rs0-2
+      - mongo-rs0-3
+
+  action_server:
+    image: rasa/rasa-sdk:latest
+    <<: *common-config
+    volumes:
+      - "./app/actions:/app/actions"
+
+  redis:
+    image: redis:latest
+    <<: *common-config
+
+  nlg:
+    entrypoint: ["python"]
+    image: boilerplate-nlg
+    <<: *common-config
+    user: "root"
+    volumes:
+      - ./app/domain/domain.yml:/nlg/domain.yml
+    command: nlg_server.py --port 5056 --domain ./domain.yml
+
+  api:
+    image: boilerplate-api
+    <<: *common-config
+    volumes:
+      - ./app/api:/api
+      - ./app/domain/domain.yml:/api/domain.yml
+    depends_on:
+      - mongo-rs0-1
+      - mongo-rs0-2
+      - mongo-rs0-3
+      - rasa
+
+  nginx:
+    image: boilerplate-nginx
+    <<: *common-config
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rasa
+      - api
+
+  mongodb-primary:
+    image: bitnami/mongodb:latest
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb-primary
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_PASSWORD=password123
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    volumes:
+      - "./app/mongov2/mongo-1:/bitnami/mongodb"
+
+  mongodb-secondary:
+    image: bitnami/mongodb:latest
+    depends_on:
+      - mongodb-primary
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb-secondary
+      - MONGODB_REPLICA_SET_MODE=secondary
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb-primary
+      - MONGODB_PRIMARY_PORT_NUMBER=27017
+      - MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD=password123
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    volumes:
+      - "./app/mongov2/mongo-2:/bitnami/mongodb"
+
+  mongodb-arbiter:
+    image: bitnami/mongodb:latest
+    depends_on:
+      - mongodb-primary
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb-arbiter
+      - MONGODB_REPLICA_SET_MODE=arbiter
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb-primary
+      - MONGODB_PRIMARY_PORT_NUMBER=27017
+      - MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD=password123
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    volumes:
+      - "./app/mongov2/mongo-3:/bitnami/mongodb"

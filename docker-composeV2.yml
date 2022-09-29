@@ -1,0 +1,129 @@
+version: "3.0"
+
+x-common-config: &common-config
+  deploy:
+    restart_policy:
+      condition: any
+    mode: replicated
+    replicas: 1
+
+services:
+  rasa:
+    image: rasa/rasa:latest-full
+    user: "root"
+    networks: ["rasa-network"]
+    volumes:
+      - "./app/rasa:/app/"
+    command: >
+      run 
+      --endpoints endpoints.yml
+      --remote-storage aws
+      --enable-api
+      --cors "*"
+      --debug
+    environment:
+      - AWS_SECRET_ACCESS_KEY=minioadmin
+      - AWS_ACCESS_KEY_ID=minioadmin
+      - AWS_DEFAULT_REGION=eu-central-1
+      - AWS_ENDPOINT_URL=http://minio:9000
+      - BUCKET_NAME=models
+    depends_on:
+      - mongodb-primary
+      - mongodb-secondary
+      - mongodb-arbiter
+
+  action_server:
+    image: rasa/rasa-sdk:latest
+    networks: ["rasa-network"]
+    volumes:
+      - "./app/actions:/app/actions"
+
+  redis:
+    image: redis:latest
+    networks: ["rasa-network"]
+
+  nlg:
+    entrypoint: ["python"]
+    image: nlg_server
+    networks: ["rasa-network"]
+    user: "root"
+    build:
+      context: ./app/nlg
+    volumes:
+      - ./app/domain/domain.yml:/nlg/domain.yml
+    command: nlg_server.py --port 5056 --domain ./domain.yml
+
+  api:
+    networks: ["rasa-network"]
+    build: ./app/api
+    volumes:
+      - ./app/api:/api
+      - ./app/domain/domain.yml:/api/domain.yml
+    depends_on:
+      - mongodb-primary
+      - mongodb-secondary
+      - mongodb-arbiter
+      - rasa
+
+  nginx:
+    networks: ["rasa-network"]
+    build: ./app/nginx
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rasa
+      - api
+
+  mongodb-primary:
+    image: docker.io/bitnami/mongodb:5.0
+    networks: ["rasa-network"]
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb-primary
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_PASSWORD=password123
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    volumes:
+      - "./app/mongov2/mongo-1:/bitnami/mongodb"
+
+  mongodb-secondary:
+    image: docker.io/bitnami/mongodb:5.0
+    networks: ["rasa-network"]
+    depends_on:
+      - mongodb-primary
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb-secondary
+      - MONGODB_REPLICA_SET_MODE=secondary
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb-primary
+      - MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD=password123
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    volumes:
+      - "./app/mongov2/mongo-2:/bitnami/mongodb"
+
+  mongodb-arbiter:
+    image: docker.io/bitnami/mongodb:5.0
+    networks: ["rasa-network"]
+    depends_on:
+      - mongodb-primary
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb-arbiter
+      - MONGODB_REPLICA_SET_MODE=arbiter
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb-primary
+      - MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD=password123
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    volumes:
+      - "./app/mongov2/mongo-3:/bitnami/mongodb"
+
+  minio:
+    image: minio/minio
+    networks: ["rasa-network"]
+    command: ["server", "/storage", "--console-address", ":9001"]
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    volumes:
+      - ./app/minio/storage:/storage
+
+networks: { rasa-network: {} }

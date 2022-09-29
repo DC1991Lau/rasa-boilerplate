@@ -1,9 +1,9 @@
 # API
 
-GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/
 
 # POST message
-POST   https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/webhooks/rest/webhook
+POST   https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/webhooks/rest/webhook
 content-type: application/json
 
 {
@@ -12,22 +12,22 @@ content-type: application/json
 }
 
 # GET conversation from sender_id 
-GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/conversations/user100/tracker
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/conversations/user100/tracker
 
 # GET story from conversation
-GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/conversations/user100/story
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/conversations/user100/story
 
 # GET domain
-GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/domain
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/domain
 
 # GET NLU logs
-GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/logs/
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/logs/
 
 # GET Intents
-GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/intents/
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/intents/
 
 
-POST https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/nlg/update
+POST https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/nlg/update
 content-type: application/json
 
 {
@@ -35,15 +35,80 @@ content-type: application/json
 	"utter": "Cucu"
 }
 
-POST https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/nlg/create
+POST https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/nlg/create
 content-type: application/json
 
 {
-	"utter_name": "utter_novo199",
+	"utter_name": "utter_novo1997",
 	"utter": "Hey Manel!!"
 }
 
-GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu63.gitpod.io/api/nlg/
+GET https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/nlg/
+
+
+#Train model
+POST https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/model/train
+content-type: application/yaml
+
+pipeline: []
+
+policies: []
+
+intents:
+  - greet
+  - goodbye
+
+entities: []
+slots: {}
+actions: []
+forms: {}
+e2e_actions: []
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+PUT https://8080-dc1991lau-rasaboilerpla-f0iz7mqzvh5.ws-eu64.gitpod.io/api/model
+content-type: application/json
+{
+	"model_file": "/models/20220920-135755-median-weed.tar.gz",
+	"remote_storage": "aws"
+}
+
 
 
 

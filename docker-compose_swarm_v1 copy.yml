@@ -1,0 +1,103 @@
+version: "3.4"
+
+x-common-config: &common-config
+  deploy:
+    restart_policy:
+      condition: any
+    mode: replicated
+
+x-mongo-config: &mongo-confi
+
+services:
+  rasa:
+    image: rasa/rasa:latest-full
+    user: "root"
+    <<: *common-config
+    volumes:
+      - "./app/rasa:/app/"
+    command: >
+      run 
+      --endpoints endpoints.yml
+      -m models
+      --enable-api
+      --cors "*"
+      --debug
+    depends_on:
+      - mongo-rs0-1
+      - mongo-rs0-2
+      - mongo-rs0-3
+
+  action_server:
+    image: rasa/rasa-sdk:latest
+    <<: *common-config
+    volumes:
+      - "./app/actions:/app/actions"
+
+  redis:
+    image: redis:latest
+    <<: *common-config
+
+  nlg:
+    entrypoint: ["python"]
+    image: boilerplate-nlg
+    <<: *common-config
+    user: "root"
+    volumes:
+      - ./app/domain/domain.yml:/nlg/domain.yml
+    command: nlg_server.py --port 5056 --domain ./domain.yml
+
+  api:
+    image: boilerplate-api
+    <<: *common-config
+    volumes:
+      - ./app/api:/api
+      - ./app/domain/domain.yml:/api/domain.yml
+    depends_on:
+      - mongo-rs0-1
+      - mongo-rs0-2
+      - mongo-rs0-3
+      - rasa
+
+  nginx:
+    image: boilerplate-nginx
+    <<: *common-config
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rasa
+      - api
+
+  mongo-rs0-1:
+    image: bitnami/mongodb
+    <<: *common-config
+    command: --replSet rs0 --port 30001 --bind_ip_all
+    volumes:
+      - ./app/mongo/mongo-rs0-1:/data/db
+    depends_on:
+      - mongo-rs0-2
+      - mongo-rs0-3
+    environment:
+      MONGO_INITDB_DATABASE: rasa
+
+  mongo-rs0-2:
+    image: bitnami/mongodb
+    <<: *common-config
+    command: --replSet rs0 --port 30002 --bind_ip_all
+    volumes:
+      - ./app/mongo/mongo-rs0-2:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: rasa
+
+  mongo-rs0-3:
+    image: bitnami/mongodb
+    <<: *common-config
+    command: --replSet rs0 --port 30003 --bind_ip_all
+    volumes:
+      - ./app/mongo/mongo-rs0-3:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: rasa
+
+  mongo-rs-starter:
+    image: mongo-rs-starter
+    depends_on:
+      - mongo-rs0-1

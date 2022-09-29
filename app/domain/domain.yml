@@ -28,6 +28,8 @@ responses:
   - text: I am a bot, powered by Rasaaaaaaasaas.
   utter_novo199:
   - text: Hey Manel!!
+  utter_novo1997:
+  - text: Hey Manel!!
   utter_okclient:
   - text: Hey Diogo
 session_config:

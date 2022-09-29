@@ -1,5 +1,12 @@
 version: "3.0"
 
+x-common-config: &common-config
+  deploy:
+    restart_policy:
+      condition: any
+    mode: replicated
+    replicas: 1
+
 services:
   rasa:
     image: rasa/rasa:latest-full
@@ -10,14 +17,20 @@ services:
     command: >
       run 
       --endpoints endpoints.yml
-      -m models
+      --remote-storage aws
       --enable-api
       --cors "*"
       --debug
+    environment:
+      - AWS_SECRET_ACCESS_KEY=minioadmin
+      - AWS_ACCESS_KEY_ID=minioadmin
+      - AWS_DEFAULT_REGION=eu-central-1
+      - AWS_ENDPOINT_URL=http://minio:9000
+      - BUCKET_NAME=models
     depends_on:
-      - mongo1
-      - mongo2
-      - mongo3
+      - mongo-rs0-2
+      - mongo-rs0-1
+      - mongo-rs0-3
 
   action_server:
     image: rasa/rasa-sdk:latest
@@ -47,9 +60,9 @@ services:
       - ./app/api:/api
       - ./app/domain/domain.yml:/api/domain.yml
     depends_on:
-      - mongo1
-      - mongo2
-      - mongo3
+      - mongo-rs0-1
+      - mongo-rs0-2
+      - mongo-rs0-3
       - rasa
 
   nginx:
@@ -61,73 +74,53 @@ services:
       - rasa
       - api
 
-  mongo1:
+  mongo-rs0-1:
     image: mongo
-    container_name: mongo1
     networks: ["rasa-network"]
-    command:
-      [
-        "--replSet",
-        "rasa-mongo-replica-set",
-        "--bind_ip_all",
-        "--port",
-        "30001",
-      ]
+    command: --replSet rs0 --port 30001 --bind_ip_all
     volumes:
-      - ./app/data/mongo-1:/data/db
-
-    healthcheck:
-      test: test $$(echo "rs.initiate({_id:'rasa-mongo-replica-set',members:[{_id:0,host:\"mongo1:30001\"},{_id:1,host:\"mongo2:30002\"},{_id:2,host:\"mongo3:30003\"}]}).ok || rs.status().ok" | mongo --port 30001 --quiet) -eq 1
-      interval: 10s
-      start_period: 30s
+      - ./app/mongo/mongo-rs0-1:/data/db
+    depends_on:
+      - mongo-rs0-2
+      - mongo-rs0-3
     environment:
       MONGO_INITDB_DATABASE: rasa
 
-  mongo2:
+  mongo-rs0-2:
     image: mongo
-    container_name: mongo2
     networks: ["rasa-network"]
-    command:
-      [
-        "--replSet",
-        "rasa-mongo-replica-set",
-        "--bind_ip_all",
-        "--port",
-        "30002",
-      ]
+    command: --replSet rs0 --port 30002 --bind_ip_all
     volumes:
-      - ./app/data/mongo-2:/data/db
-
+      - ./app/mongo/mongo-rs0-2:/data/db
     environment:
       MONGO_INITDB_DATABASE: rasa
 
-  mongo3:
+  mongo-rs0-3:
     image: mongo
-    container_name: mongo3
     networks: ["rasa-network"]
-    command:
-      [
-        "--replSet",
-        "rasa-mongo-replica-set",
-        "--bind_ip_all",
-        "--port",
-        "30003",
-      ]
+    command: --replSet rs0 --port 30003 --bind_ip_all
     volumes:
-      - ./app/data/mongo-3:/data/db
-
+      - ./app/mongo/mongo-rs0-3:/data/db
     environment:
       MONGO_INITDB_DATABASE: rasa
 
-    #model_server
-    #Minio
+  mongo-rs-starter:
+    image: mongo-rs-starter
+    networks: ["rasa-network"]
+    depends_on:
+      - mongo-rs0-1
 
-    #logging
-
-    #Kraken
-
-    # volumes:
-    #   domain/domain.yml
-    #   data/mongo
+  minio:
+    image: minio/minio
+    networks: ["rasa-network"]
+    command: ["server", "/storage", "--console-address", ":9001"]
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    volumes:
+      - ./app/minio/storage:/storage
 
 networks: { rasa-network: {} }

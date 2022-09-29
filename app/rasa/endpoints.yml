@@ -1,6 +1,6 @@
 tracker_store:
   type: mongod
-  url: mongodb://mongo1:30001,mongo2:30002,mongo3:30003/rasa?replicaSet=rasa-mongo-replica-set
+  url: mongodb://mongo-rs0-1:30001,mongo-rs0-2:30002,mongo-rs0-3:30003/rasa?replicaSet=rasa-mongo-replica-set
   db: rasa
   username:
   password:
@@ -15,3 +15,6 @@ lock_store:
 
 nlg:
   url: "http://nlg:5056/nlg"
+# models:
+#   url: http://minio:9000/models
+#   wait_time_between_pulls: 10
